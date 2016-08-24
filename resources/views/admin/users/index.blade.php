@@ -10,11 +10,13 @@
         <thead>
         <tr>
             <th>USER ID</th>
+            <th>USER PHOTO</th>
             <th>NAME</th>
             <th>EMAIL</th>
             <th>ROLE</th>
             <th>STATUS</th>
-            <th>REGISTRATION DATE</th>
+            <th>REGISTERED</th>
+            <th>UPDATED</th>
         </tr>
         </thead>
 
@@ -26,11 +28,13 @@
 
         <tr>
             <td>{{$user->id}}</td>
-            <td>{{$user->name}}</td>
+            <td><img height="50" src="{{$user->photo ? $user->photo->path : 'http://placehold.it/400x400'}}" alt=""></td>
+            <td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->name}}</a></td>
             <td>{{$user->email}}</td>
             <td>{{$user->role->name}}</td>
             <td>{{$user->account_status == 1 ? 'Active' : 'Inactive'}}</td>
             <td>{{$user->created_at->diffForHumans()}}</td>
+            <td>{{$user->updated_at->diffForHumans()}}</td>
         </tr>
 
         @endforeach
