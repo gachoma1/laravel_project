@@ -25,9 +25,9 @@
 
         <div class="form-group">
 
-            {!! Form::label('path', 'User Photo:') !!}
+            {!! Form::label('photo_id', 'User Photo:') !!}
 
-            {!! Form::file('path', null, ['class'=>'form-control']) !!}
+            {!! Form::file('photo_id', null, ['class'=>'form-control']) !!}
 
         </div>
 
