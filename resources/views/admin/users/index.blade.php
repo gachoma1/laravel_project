@@ -6,6 +6,24 @@
 
     <h1>Users</h1>
 
+    @if(Session::has('user_deleted'))
+
+        <h3 class="bg-danger">{{session('user_deleted')}}</h3>
+
+    @endif
+
+    @if(Session::has('user_created'))
+
+        <h3 class="bg-success">{{session('user_created')}}</h3>
+
+    @endif
+
+    @if(Session::has('user_updated'))
+
+        <h3 class="bg-primary">{{session('user_updated')}}</h3>
+
+    @endif
+
     <table class="table table-striped table-hover">
         <thead>
         <tr>
